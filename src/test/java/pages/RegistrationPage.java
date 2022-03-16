@@ -3,8 +3,6 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -65,9 +63,6 @@ public class RegistrationPage {
 
         return this;
     }
-
-    public void setPicture() { pictureUpload.uploadFile(new File("src/test/resources/img/1.png"));}
-
 
     public RegistrationPage setSubject(String subject) {
         subjectInput.setValue(subject).pressEnter();

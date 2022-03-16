@@ -1,16 +1,10 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
-public class RegistrationFormWithPageObjectsTests {
+public class RegistrationFormWithPageObjectsTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     String firstName = "Alex";
@@ -38,12 +32,6 @@ public class RegistrationFormWithPageObjectsTests {
     String stateAndCity = "State and City";
     String stateAndCityValue = "NCR Delhi";
 
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-    }
-
     @Test
     void successFillTest() {
         registrationPage.openPage();
@@ -56,7 +44,6 @@ public class RegistrationFormWithPageObjectsTests {
         registrationPage.setEmail(email);
         registrationPage.setAdress(adress);
         registrationPage.setHobby();
-        registrationPage.setPicture();
         registrationPage.setState();
         registrationPage.setCity();
         registrationPage.clickOnSubmit();
@@ -68,7 +55,6 @@ public class RegistrationFormWithPageObjectsTests {
                 .checkForm(dateOfBirth, dateOfBirthValue)
                 .checkForm(subjects, subjectsValue)
                 .checkForm(hobbies, hobbiesValue)
-                .checkForm(picture, pictureValue)
                 .checkForm(stateAndCity, stateAndCityValue);
     }
 }

@@ -1,25 +1,16 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
-public class RegistrationFormTests {
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-    }
+public class RegistrationFormTests extends TestBase {
 
     @Test
     void successFillTest() {
-        open("/automation-practice-form");
+        Selenide.open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         $("#firstName").setValue("Alex");
         $("#lastName").setValue("Egorov");
@@ -32,14 +23,12 @@ public class RegistrationFormTests {
         $("[aria-label$='July 30th, 2008']").click();
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").uploadFromClasspath("img/1.png");
         $("#currentAddress").setValue("Some address 1");
         $("#state").scrollTo().click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
         $("#city").click();
-        $("#stateCity-wrapper").$(byText("Noida")).click();
+        $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
-
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").$(byText("Student Name"))
                 .parent().shouldHave(text("Alex Egorov"));
