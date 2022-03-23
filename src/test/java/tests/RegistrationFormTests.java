@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationFormTests {
-    @Tag("remote")
     @Test
     void successFillTest() {
         Selenide.open("/automation-practice-form");
