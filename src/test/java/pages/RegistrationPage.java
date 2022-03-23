@@ -4,13 +4,14 @@ import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.components.CalendarComponent;
+import tests.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class RegistrationPage {
+public class RegistrationPage extends TestBase {
     // components
     private CalendarComponent calendarComponent = new CalendarComponent();
 
@@ -26,7 +27,6 @@ public class RegistrationPage {
             phoneNumberInput = $("#userNumber"),
             genderInput = $(byText("Other")),
             hobbyInput = $(byText("Sports")),
-            pictureUpload = $("#uploadPicture"),
             selectStateInput = $("#state"),
             stateInput = $(byText("NCR")),
             selectCityInput = $("#city"),

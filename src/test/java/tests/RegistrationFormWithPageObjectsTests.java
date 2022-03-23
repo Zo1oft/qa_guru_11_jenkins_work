@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 @Tag("remote")
-public class RegistrationFormWithPageObjectsTests {
+public class RegistrationFormWithPageObjectsTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     String firstName = "Alex";
