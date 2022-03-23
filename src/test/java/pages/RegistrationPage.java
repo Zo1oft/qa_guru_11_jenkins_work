@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class RegistrationPage extends TestBase {
+public class RegistrationPage {
     // components
     private CalendarComponent calendarComponent = new CalendarComponent();
 
