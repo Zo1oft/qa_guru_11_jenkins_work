@@ -1,6 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Condition.text;
@@ -32,6 +34,7 @@ public class RegistrationPage {
             submitInput = $("#submit");
 
     // actions
+
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         headerTitle.shouldHave(text("Student Registration Form"));

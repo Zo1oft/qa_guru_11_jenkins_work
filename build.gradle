@@ -63,3 +63,8 @@ task smoke_test(type: Test) {
         includeTags "smoke"
     }
 }
+task remote_test(type: Test) {
+    useJUnitPlatform{
+        includeTags "remote"
+    }
+}
